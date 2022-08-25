@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ToastItem, ToastType } from "../data/ToastItem";
+import { ToastType } from "../data/ToastItem";
 import { removeToast } from "../features/toastList/toastListSlice";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import "../style/Components/Toast.css";

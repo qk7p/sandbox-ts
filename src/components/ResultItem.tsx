@@ -1,6 +1,5 @@
 import { ToastType } from "../data/ToastItem";
 import "../style/NestingPage/ResultItem.css";
-import { getId } from "../utils/getId";
 import { makeToast } from "../utils/makeToast";
 
 export interface IResultItemProps {

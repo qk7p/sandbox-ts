@@ -31,7 +31,7 @@ a:hover {
 ul {
   flex: 10;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 ul a {
