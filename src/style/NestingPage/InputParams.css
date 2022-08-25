@@ -1,0 +1,22 @@
+.inputParams {
+  border: 1px solid var(--box-border);
+  font-family: "Rubik", sans-serif;
+  border-radius: 4px;
+  margin: 6px;
+  outline: none;
+  padding: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputParams:hover {
+  border: 1px solid var(--blue);
+}
+
+.inputParams:focus-visible {
+  border: 1px solid var(--blue);
+}

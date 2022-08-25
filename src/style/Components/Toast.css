@@ -1,0 +1,108 @@
+.notification-container {
+  font-size: 14px;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+.top-right {
+  top: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.top-left {
+  top: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.bottom-left {
+  bottom: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.notification {
+  transition: 0.3s ease;
+  overflow: hidden;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 5px #999;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.notification:hover {
+  box-shadow: 0 0 12px #fff;
+  opacity: 1;
+}
+
+.notification-message {
+  text-align: left;
+  overflow: hidden;
+  color: white;
+}
+
+.toast {
+  height: auto;
+  width: 300px;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-container button {
+  color: white;
+  outline: none;
+  border: none;
+  opacity: 0.8;
+  font-size: 20px;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  margin-left: 5px;
+}
+
+
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.danger {
+  background-color: var(--dark-orange);
+}
+
+.info {
+  background-color: var(--blue);
+}
+
+.success {
+  background-color: var(--dark-green);
+}

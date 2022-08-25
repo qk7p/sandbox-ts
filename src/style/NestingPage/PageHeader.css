@@ -1,0 +1,21 @@
+.pageHeader {
+    background-color: white;
+  }
+  
+  .pageTitle {
+    margin: 24px 0 24px 40px;
+    color: var(--font-gray);
+    font-size: large;
+  }
+  
+  .horizontalDivider {
+    color: var(--background);
+    width: 100%;
+    margin: 0;
+  }
+  
+  .pageDescription {
+    margin: 12px 0 12px 40px;
+    color: var(--font-gray);
+  }
+  

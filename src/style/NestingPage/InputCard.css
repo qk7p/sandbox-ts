@@ -1,0 +1,27 @@
+.inputCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 6px;
+  margin: 15px;
+  border: 1px solid var(--box-border);
+  padding: 10px;
+  min-width: 25%;
+}
+
+.outerBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.leftInnerBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightInnerBox {
+  display: flex;
+  flex-direction: column;
+}
