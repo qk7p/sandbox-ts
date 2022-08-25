@@ -14,22 +14,22 @@ export function InputMaterialCard() {
   const dispatch = useAppDispatch();
 
   const materialWidthHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changeMaterialWidth(Number(event.target.value)));
   };
   const materialHeightHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changeMaterialHeight(Number(event.target.value)));
   };
   const paddingWidthHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changePaddingWidth(Number(event.target.value)));
   };
   const paddingHeightHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changePaddingHeight(Number(event.target.value)));
   };

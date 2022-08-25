@@ -13,19 +13,19 @@ import { CardHeader } from "./CardHeader";
 export function InputDetailCard() {
   const dispatch = useAppDispatch();
 
-  const detailWidthHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const detailWidthHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(changeDetailWidth(Number(event.target.value)));
   };
   const detailHeightHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changeDetailHeight(Number(event.target.value)));
   };
-  const MarginWidthHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const MarginWidthHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(changeMarginWidth(Number(event.target.value)));
   };
   const MarginHeightHandler = (
-    event: React.KeyboardEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     dispatch(changeMarginHeight(Number(event.target.value)));
   };
