@@ -8,14 +8,16 @@ import { BodyTitle } from "../components/BodyTitle";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { Toast } from "../components/Toast";
 import { calcEfficiency } from "../utils/calcEfficiency";
-
+import { validateInputs } from "../utils/validateInputs";
 
 export function NestingPage() {
   function calcAllParams() {
-    nestCurrentDetail();
-    calcDetailParams();
-    calcMaterialParams();
-    calcEfficiency();
+    if (validateInputs()) {
+      nestCurrentDetail();
+      calcDetailParams();
+      calcMaterialParams();
+      calcEfficiency();
+    }
   }
 
   return (
