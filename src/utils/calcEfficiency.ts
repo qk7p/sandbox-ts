@@ -1,4 +1,3 @@
-import { changeCurrentNestingResult } from "../features/currentNestingResult/currentNestingResultSlice";
 import { changeNestingEfficiency } from "../features/nestingEfficiency/nestingEfficiency";
 import { store } from "../store/store";
 
