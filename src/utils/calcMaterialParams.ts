@@ -18,7 +18,7 @@ export function calcMaterialParams() {
   const cleanWidth = material.getCleanWidth();
   const cleanHeight = material.getCleanHeight();
 
-  const area = Number(((cleanWidth / 1000) * (cleanHeight / 1000)).toFixed(2));
+  const area = Number(((cleanWidth / 1000) * (cleanHeight / 1000)).toFixed(3));
 
   store.dispatch(changeMaterialArea(area));
 }

@@ -13,6 +13,7 @@ export function ResultCard() {
   const materialArea = useAppSelector(
     (state) => state.materialCalc.materialArea
   );
+  const nestingEfficiency = useAppSelector((state) => state.nestingEfficiency.nestingEfficiency)
 
   return (
     <div className="ResultCard">
@@ -26,6 +27,7 @@ export function ResultCard() {
           valueType=" м.п."
         />
         <ResultItem name="Площадь заготовки с отступами" value={materialArea} valueType=" м2" />
+        <ResultItem name="Эффективность раскладки:" value={nestingEfficiency} valueType=" %" />
       </div>
     </div>
   );

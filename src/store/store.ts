@@ -4,10 +4,8 @@ import { detailSlice } from "../features/detail/detailSlice";
 import { detailCalcSlice } from "../features/detailCalc/detailCalcSlice";
 import { flatMaterialSlice } from "../features/flatMaterial/flatMaterialSlice";
 import { materialCalcSlice } from "../features/materialCalc/materialCalcSlice";
+import { nestingEfficiencySlice } from "../features/nestingEfficiency/nestingEfficiency";
 import { toastListSlice } from "../features/toastList/toastListSlice";
-
-
-
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +15,7 @@ export const store = configureStore({
     materialCalc: materialCalcSlice.reducer,
     currentNestingResult: currentNestingResultSlice.reducer,
     toastList: toastListSlice.reducer,
+    nestingEfficiency: nestingEfficiencySlice.reducer,
   },
 });
 

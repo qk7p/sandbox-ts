@@ -7,6 +7,7 @@ import { calcMaterialParams } from "../utils/calcMaterialParams";
 import { BodyTitle } from "../components/BodyTitle";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { Toast } from "../components/Toast";
+import { calcEfficiency } from "../utils/calcEfficiency";
 
 
 export function NestingPage() {
@@ -14,6 +15,7 @@ export function NestingPage() {
     nestCurrentDetail();
     calcDetailParams();
     calcMaterialParams();
+    calcEfficiency();
   }
 
   return (
