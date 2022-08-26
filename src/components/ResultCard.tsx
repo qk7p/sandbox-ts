@@ -27,7 +27,7 @@ export function ResultCard() {
           valueType=" м.п."
         />
         <ResultItem name="Площадь заготовки с отступами" value={materialArea} valueType=" м2" />
-        <ResultItem name="Эффективность раскладки:" value={nestingEfficiency} valueType=" %" />
+        <ResultItem name="Эффективность раскладки:" value={nestingEfficiency} valueType="%" />
       </div>
     </div>
   );

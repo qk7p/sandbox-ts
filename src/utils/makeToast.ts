@@ -5,5 +5,5 @@ import { getId } from "./getId";
 
 export function makeToast(message: string, toastType: ToastType) {
   const newToast = new ToastItem(getId(), message, toastType);
-  store.dispatch(addToast(newToast));
+  store.dispatch(addToast(JSON.stringify(newToast)));
 }

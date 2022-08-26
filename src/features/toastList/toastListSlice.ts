@@ -14,8 +14,8 @@ export const toastListSlice = createSlice({
   name: "toastList",
   initialState,
   reducers: {
-    addToast: (state, action: PayloadAction<ToastItem>) => {
-      state.toastList.push(action.payload);
+    addToast: (state, action: PayloadAction<string>) => {
+      state.toastList.push(JSON.parse(action.payload));
     },
     removeToast: (state, action: PayloadAction<number>) => {
       const index = state.toastList.findIndex((e) => e.id === action.payload);
