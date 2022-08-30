@@ -16,6 +16,7 @@ export function ResultItem(props: IResultItemProps) {
     makeToast("Скопировано в буфер обмена", ToastType.Info)
   }
 
+
   return (
     <div className="ResultItem">
       <p>

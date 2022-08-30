@@ -9,10 +9,10 @@ export function Navigation() {
       </span>
       <ul>
         <li>
-          <Link to="/">Отрисовщик</Link>
+          <Link to="/nester">Нестер</Link>
         </li>
         <li>
-          <Link to="/nester">Нестер</Link>
+          <Link to="/mailHelper">Хелпер</Link>
         </li>
       </ul>
     </nav>

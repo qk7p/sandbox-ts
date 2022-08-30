@@ -4,11 +4,11 @@ export function WelcomePage() {
   return (
     <>
       <BodyTitle
-        pageTitle="Отрисовщик"
-        pageDescription="Попытка написать отрисовщик раскладки"
+        pageTitle="Песочница"
+        pageDescription="Приложение для отработки навыков полученных в процессе обучения, а также для помощи в решении текущих задач."
       />
-      <div className="mainContainer">
-        
+      <div className="welcomePageContainer">
+  
       </div>
     </>
   );

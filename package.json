@@ -22,8 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "cd build && rsync --archive --compress --delete . qk7p@qk7p.ru:/var/www/qk7p.ru/html"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

@@ -1,9 +1,10 @@
 @import url(./PageHeader.css);
 
-.mainContainer {
+.nestingPageContainer {
   display: flex;
   flex-direction: column;
   background-color: var(--background);
+  height: 100%;
 }
 
 .bodyContainer {

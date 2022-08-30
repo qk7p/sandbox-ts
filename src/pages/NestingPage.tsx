@@ -6,7 +6,6 @@ import { calcDetailParams } from "../utils/calcDetailParams";
 import { calcMaterialParams } from "../utils/calcMaterialParams";
 import { BodyTitle } from "../components/BodyTitle";
 import { PrimaryButton } from "../components/PrimaryButton";
-import { Toast } from "../components/Toast";
 import { calcEfficiency } from "../utils/calcEfficiency";
 import { validateInputs } from "../utils/validateInputs";
 
@@ -21,7 +20,7 @@ export function NestingPage() {
   }
 
   return (
-    <div className="mainContainer">
+    <div className="nestingPageContainer">
       <BodyTitle
         pageTitle="Нестер 2D"
         pageDescription="Нестер - средство для раскладки деталей на заготовку."
@@ -35,7 +34,6 @@ export function NestingPage() {
         </div>
         <ResultCard />
       </div>
-      <Toast />
     </div>
   );
 }
