@@ -4,7 +4,7 @@ import {
   changeDetailPerimeter,
 } from "../features/detailCalc/detailCalcSlice";
 import { changeMaterialArea } from "../features/materialCalc/materialCalcSlice";
-import { changeNestingEfficiency } from "../features/nestingEfficiency/nestingEfficiency";
+import { changeNestingEfficiency } from "../features/nestingEfficiency/nestingDetails";
 import { store } from "../store/store";
 
 export function clearResults() {

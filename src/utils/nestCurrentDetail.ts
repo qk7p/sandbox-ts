@@ -3,6 +3,7 @@ import { FlatMaterial } from "../data/FlatMaterial";
 import { changeCurrentNestingResult } from "../features/currentNestingResult/currentNestingResultSlice";
 import { FlatNester } from "../service/Nester/FlatNester";
 import { store } from "../store/store";
+import { setDataForDrawer } from "./setDataForDrawer";
 
 export function nestCurrentDetail() {
   const detailWidth = store.getState().detail.width;
@@ -32,6 +33,7 @@ export function nestCurrentDetail() {
   const flatNester = new FlatNester(currentDetail, currentMaterial);
 
   const result = flatNester.nest();
+  setDataForDrawer(flatNester);
 
   store.dispatch(changeCurrentNestingResult(result));
 }

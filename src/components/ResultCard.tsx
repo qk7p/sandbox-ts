@@ -13,7 +13,7 @@ export function ResultCard() {
   const materialArea = useAppSelector(
     (state) => state.materialCalc.materialArea
   );
-  const nestingEfficiency = useAppSelector((state) => state.nestingEfficiency.nestingEfficiency)
+  const nestingEfficiency = useAppSelector((state) => state.nestingDetails.nestingEfficiency)
 
   return (
     <div className="ResultCard">

@@ -4,14 +4,38 @@ import { Detail } from "../../data/Detail";
 export class FlatNester {
   detail: Detail;
   flatMaterial: FlatMaterial;
+  mainQuantityByWidth: number;
+  mainQuantityByHeight: number;
+  subQuantityByWidth: number;
+  subQuantityByHeight: number;
 
   constructor(_detail: Detail, _flatmaterial: FlatMaterial) {
     this.detail = _detail;
     this.flatMaterial = _flatmaterial;
+    this.mainQuantityByWidth = 0;
+    this.mainQuantityByHeight = 0;
+    this.subQuantityByWidth = 0;
+    this.subQuantityByHeight = 0;
   }
 
   nest() {
-    return Math.max(this.nestByWidth(), this.nestByHeight());
+    if (this.nestByWidth() > this.nestByHeight()) {
+      this.mainQuantityByWidth = Math.floor(
+        this.flatMaterial.getCleanWidth() / this.detail.getCleanWidth()
+      );
+      this.mainQuantityByHeight = Math.floor(
+        this.flatMaterial.getCleanHeight() / this.detail.getCleanHeight()
+      );
+      return this.nestByWidth();
+    } else {
+      this.mainQuantityByWidth = Math.floor(
+        this.flatMaterial.getCleanWidth() / this.detail.getCleanHeight()
+      );
+      this.mainQuantityByHeight = Math.floor(
+        this.flatMaterial.getCleanHeight() / this.detail.getCleanWidth()
+      );
+      return this.nestByHeight();
+    }
   }
 
   nestByWidth(): number {

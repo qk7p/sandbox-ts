@@ -8,7 +8,7 @@ import { BodyTitle } from "../components/BodyTitle";
 import { Button } from "../components/Button";
 import { calcEfficiency } from "../utils/calcEfficiency";
 import { validateInputs } from "../utils/validateInputs";
-import { CollapsibleContainer } from "../components/CollapsibleContainer";
+import { NestingResultDrawer } from "../components/NestingResultDrawer";
 
 export function NestingPage() {
   function calcAllParams() {
@@ -39,7 +39,7 @@ export function NestingPage() {
         </div>
         <ResultCard />
         <div className="nestingResultContainer">
-          <CollapsibleContainer isExpand={false} />
+          <NestingResultDrawer isExpand={false} />
         </div>
       </div>
     </div>
