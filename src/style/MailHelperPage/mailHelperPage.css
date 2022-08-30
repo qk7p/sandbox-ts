@@ -1,0 +1,13 @@
+.mailPageContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  height: 100%;
+}
+
+.mailBodyContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

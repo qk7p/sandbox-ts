@@ -1,0 +1,26 @@
+.mailItem {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--box-border);
+  background-color: white;
+  border-radius: 6px;
+  margin: 15px 15px 15px 15px;
+  padding: 10px;
+  min-width: 25%;
+  flex-wrap: wrap;
+  max-width: 25%;
+}
+
+.mailText {
+  color: var(--blue);
+  cursor: pointer;
+  margin: 1px 2px 1px 2px;
+  box-sizing: border-box;
+}
+
+.mailText:active {
+  color: white;
+  border-radius: 5px;
+  background-color: var(--dark-green);
+  transition: 0.4s;
+}
