@@ -1,0 +1,35 @@
+.primaryButton {
+  width: 60%;
+  padding: 6px;
+  border: 1px solid var(--dark-green);
+  border-radius: 8px;
+  background-color: var(--green);
+  color: white;
+  font-family: inherit;
+  font-size: large;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  outline: none;
+}
+
+.primaryButton:hover {
+  opacity: 0.9;
+}
+
+.secondaryButton {
+  width: 60%;
+  padding: 6px;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background-color: var(--blue);
+  color: white;
+  font-family: inherit;
+  font-size: large;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  outline: none;
+}
+
+.secondaryButton:hover {
+  opacity: 0.9;
+}

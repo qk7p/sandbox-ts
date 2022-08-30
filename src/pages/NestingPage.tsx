@@ -5,9 +5,10 @@ import { ResultCard } from "../components/ResultCard";
 import { calcDetailParams } from "../utils/calcDetailParams";
 import { calcMaterialParams } from "../utils/calcMaterialParams";
 import { BodyTitle } from "../components/BodyTitle";
-import { PrimaryButton } from "../components/PrimaryButton";
+import { Button } from "../components/Button";
 import { calcEfficiency } from "../utils/calcEfficiency";
 import { validateInputs } from "../utils/validateInputs";
+import { CollapsibleContainer } from "../components/CollapsibleContainer";
 
 export function NestingPage() {
   function calcAllParams() {
@@ -30,9 +31,16 @@ export function NestingPage() {
           <InputBox />
         </div>
         <div className="buttonContainer">
-          <PrimaryButton onClick={calcAllParams} buttonText="разложить" />
+          <Button
+            onClick={calcAllParams}
+            buttonText="разложить"
+            className="primaryButton"
+          />
         </div>
         <ResultCard />
+        <div className="nestingResultContainer">
+          <CollapsibleContainer isExpand={false} />
+        </div>
       </div>
     </div>
   );

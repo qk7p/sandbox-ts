@@ -25,3 +25,9 @@
   display: flex;
   justify-content: center;
 }
+
+.nestingResultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
