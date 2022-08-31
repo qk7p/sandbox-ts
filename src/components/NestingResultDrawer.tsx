@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Button } from "./Button";
 import "../style/NestingPage/nestingResultDrawer.css";
-import { useAppSelector } from "../hooks/hooks";
-import { getId } from "../utils/getId";
 import { Drawer } from "../service/Drawer/Drawer";
 
 export interface INestingResultDrawerProps {
@@ -14,22 +12,6 @@ export function NestingResultDrawer(props: INestingResultDrawerProps) {
   const [isShow, setIsShow] = useState(isExpand);
   const [buttonStyle, setButtonStyle] = useState("primaryButton");
   const [buttonText, setButtonText] = useState("Показать раскладку");
-
-  const quantityByWidth = useAppSelector(
-    (state) => state.nestingDetails.mainQuantityByWidth
-  );
-  const quantityByHeight = useAppSelector(
-    (state) => state.nestingDetails.mainQuantityByHeight
-  );
-
-  const subQuantityByWidth = useAppSelector(
-    (state) => state.nestingDetails.subQuantityByWidth
-  );
-  const subQuantityByHeight = useAppSelector(
-    (state) => state.nestingDetails.subQuantityByHeight
-  );
-
-  const nestedBy = useAppSelector((state) => state.nestingDetails.nestedBy);
 
   const drawer = new Drawer();
   const MaterialWrapper = drawer.MaterialWrapper;
