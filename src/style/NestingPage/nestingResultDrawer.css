@@ -1,8 +1,18 @@
 .nestingResultDrawer {
-  width: 300px;
-  height: 150px;
+  width: 90%;
+  height: 300px;
   border: 1px solid darkblue;
   margin: 15px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.mainNest {
+  border: 1px solid red;
+}
+
+.subNest {
+  border: 1px solid green;
 }
 
 .divRow {
@@ -18,5 +28,13 @@
   width: 20px;
   height: 20px;
   display: flex;
+  flex-direction: column;
+}
+
+.byWidth {
+  flex-direction: row;
+}
+
+.byHeight {
   flex-direction: column;
 }

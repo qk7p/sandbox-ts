@@ -1,5 +1,6 @@
 import { FlatMaterial } from "../../data/FlatMaterial";
 import { Detail } from "../../data/Detail";
+import { setDataForDrawer } from "../../utils/setDataForDrawer";
 
 export class FlatNester {
   detail: Detail;
@@ -8,6 +9,11 @@ export class FlatNester {
   mainQuantityByHeight: number;
   subQuantityByWidth: number;
   subQuantityByHeight: number;
+  mainMaterialWidth: number;
+  mainMaterialHeight: number;
+  subMaterialWidth: number;
+  subMaterialHeight: number;
+  nestedBy: string;
 
   constructor(_detail: Detail, _flatmaterial: FlatMaterial) {
     this.detail = _detail;
@@ -16,6 +22,11 @@ export class FlatNester {
     this.mainQuantityByHeight = 0;
     this.subQuantityByWidth = 0;
     this.subQuantityByHeight = 0;
+    this.mainMaterialWidth = 0;
+    this.mainMaterialHeight = 0;
+    this.subMaterialWidth = 0;
+    this.subMaterialHeight = 0;
+    this.nestedBy = "";
   }
 
   nest() {
@@ -26,6 +37,22 @@ export class FlatNester {
       this.mainQuantityByHeight = Math.floor(
         this.flatMaterial.getCleanHeight() / this.detail.getCleanHeight()
       );
+      this.mainMaterialWidth =
+        this.mainQuantityByWidth * this.detail.getCleanWidth();
+      this.mainMaterialHeight = this.flatMaterial.getCleanHeight();
+      this.subMaterialWidth =
+        this.flatMaterial.getCleanWidth() - this.mainMaterialWidth;
+      this.subMaterialHeight = this.mainMaterialHeight;
+      if (this.detail.getCleanHeight() < this.mainMaterialWidth) {
+        this.subQuantityByWidth = Math.floor(
+          this.subMaterialWidth / this.detail.getCleanHeight()
+        );
+        this.subQuantityByHeight = Math.floor(
+          this.subMaterialHeight / this.detail.getCleanWidth()
+        );
+      }
+      this.nestedBy = "byWidth";
+      setDataForDrawer(this);
       return this.nestByWidth();
     } else {
       this.mainQuantityByWidth = Math.floor(
@@ -34,6 +61,22 @@ export class FlatNester {
       this.mainQuantityByHeight = Math.floor(
         this.flatMaterial.getCleanHeight() / this.detail.getCleanWidth()
       );
+      this.mainMaterialWidth = this.flatMaterial.getCleanWidth();
+      this.mainMaterialHeight =
+        this.mainQuantityByHeight * this.detail.getCleanHeight();
+      this.subMaterialWidth = this.mainMaterialWidth;
+      this.subMaterialHeight =
+        this.flatMaterial.getCleanHeight() - this.mainMaterialHeight;
+      if (this.detail.getCleanHeight() < this.subMaterialHeight) {
+        this.subQuantityByWidth = Math.floor(
+          this.subMaterialWidth / this.detail.getCleanWidth()
+        );
+        this.subQuantityByHeight = Math.floor(
+          this.subMaterialHeight / this.detail.getCleanHeight()
+        );
+      }
+      this.nestedBy = "byHeight";
+      setDataForDrawer(this);
       return this.nestByHeight();
     }
   }
@@ -77,7 +120,7 @@ export class FlatNester {
         this.flatMaterial.getCleanHeight() / this.detail.getCleanWidth()
       );
     const freeSideB = this.flatMaterial.getCleanHeight() - usedSideB;
-    if (freeSideB >= this.detail.getCleanWidth()) {
+    if (freeSideB >= this.detail.getCleanHeight()) {
       const secondResult = this.simpleNest(
         this.flatMaterial.getCleanWidth(),
         freeSideB

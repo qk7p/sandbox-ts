@@ -4,7 +4,7 @@ import { detailSlice } from "../features/detail/detailSlice";
 import { detailCalcSlice } from "../features/detailCalc/detailCalcSlice";
 import { flatMaterialSlice } from "../features/flatMaterial/flatMaterialSlice";
 import { materialCalcSlice } from "../features/materialCalc/materialCalcSlice";
-import { nestingDetailsSlice } from "../features/nestingEfficiency/nestingDetails";
+import { nestingDetailsSlice } from "../features/nestingDetails/nestingDetails";
 import { toastListSlice } from "../features/toastList/toastListSlice";
 
 export const store = configureStore({

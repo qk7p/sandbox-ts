@@ -11,8 +11,8 @@ export function nestCurrentDetail() {
   const marginWidth = store.getState().detail.marginWidth;
   const marginHeight = store.getState().detail.marginHeight;
 
-  const materialWidth = store.getState().flatMaterial.height;
-  const materialHeight = store.getState().flatMaterial.width;
+  const materialWidth = store.getState().flatMaterial.width;
+  const materialHeight = store.getState().flatMaterial.height;
   const paddingWidth = store.getState().flatMaterial.paddingWidth;
   const paddingHeight = store.getState().flatMaterial.paddingHeight;
 

@@ -1,4 +1,4 @@
-import { changeNestingEfficiency } from "../features/nestingEfficiency/nestingDetails";
+import { changeNestingEfficiency } from "../features/nestingDetails/nestingDetails";
 import { store } from "../store/store";
 
 export function calcEfficiency() {
