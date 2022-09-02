@@ -4,7 +4,7 @@ import { flatMaterialState } from "../../features/flatMaterial/flatMaterialSlice
 import { NestingDetailsState } from "../../features/nestingDetails/nestingDetails";
 import { store } from "../../store/store";
 
-export class NewDrawer {
+export class Drawer {
   _nestedBy: string;
   _nestingDetails: NestingDetailsState;
   _flatMaterial: flatMaterialState;

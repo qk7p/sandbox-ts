@@ -1,9 +1,9 @@
-import { changeCurrentNestingResult } from "../features/currentNestingResult/currentNestingResultSlice";
+import { changeCurrentNestingResult } from "../features/nestingDetails/currentNestingResultSlice";
 import {
   changeDetailArea,
   changeDetailPerimeter,
-} from "../features/detailCalc/detailCalcSlice";
-import { changeMaterialArea } from "../features/materialCalc/materialCalcSlice";
+} from "../features/detail/detailCalcSlice";
+import { changeMaterialArea } from "../features/flatMaterial/flatMaterialCalcSlice";
 import { changeNestingEfficiency } from "../features/nestingDetails/nestingDetails";
 import { store } from "../store/store";
 

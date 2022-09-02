@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { currentNestingResultSlice } from "../features/currentNestingResult/currentNestingResultSlice";
+import { currentNestingResultSlice } from "../features/nestingDetails/currentNestingResultSlice";
 import { detailSlice } from "../features/detail/detailSlice";
-import { detailCalcSlice } from "../features/detailCalc/detailCalcSlice";
+import { detailCalcSlice } from "../features/detail/detailCalcSlice";
 import { flatMaterialSlice } from "../features/flatMaterial/flatMaterialSlice";
-import { materialCalcSlice } from "../features/materialCalc/materialCalcSlice";
+import { materialCalcSlice } from "../features/flatMaterial/flatMaterialCalcSlice";
 import { nestingDetailsSlice } from "../features/nestingDetails/nestingDetails";
 import { toastListSlice } from "../features/toastList/toastListSlice";
 

@@ -2,7 +2,7 @@ import { Detail } from "../data/Detail";
 import {
   changeDetailArea,
   changeDetailPerimeter,
-} from "../features/detailCalc/detailCalcSlice";
+} from "../features/detail/detailCalcSlice";
 import { store } from "../store/store";
 
 export function calcDetailParams() {

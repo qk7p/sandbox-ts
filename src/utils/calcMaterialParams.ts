@@ -1,5 +1,5 @@
 import { FlatMaterial } from "../data/FlatMaterial";
-import { changeMaterialArea } from "../features/materialCalc/materialCalcSlice";
+import { changeMaterialArea } from "../features/flatMaterial/flatMaterialCalcSlice";
 import { store } from "../store/store";
 
 export function calcMaterialParams() {

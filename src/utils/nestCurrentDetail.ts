@@ -1,6 +1,6 @@
 import { Detail } from "../data/Detail";
 import { FlatMaterial } from "../data/FlatMaterial";
-import { changeCurrentNestingResult } from "../features/currentNestingResult/currentNestingResultSlice";
+import { changeCurrentNestingResult } from "../features/nestingDetails/currentNestingResultSlice";
 import { FlatNester } from "../service/Nester/FlatNester";
 import { store } from "../store/store";
 import { setDataForDrawer } from "./setDataForDrawer";

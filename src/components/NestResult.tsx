@@ -1,7 +1,7 @@
 import { useAppSelector } from "../hooks/hooks";
-import { NewDrawer } from "../service/Drawer/NewDrawer";
+import { Drawer } from "../service/Drawer/Drawer";
 import { getId } from "../utils/getId";
-import "../style/NestingPage/nestingResultDrawer.css";
+import "../style/NestingPage/NestingResultDrawer.css";
 
 export interface INestResultProps {}
 
@@ -20,7 +20,7 @@ export function NestResult(props: INestResultProps) {
     (state) => state.nestingDetails.subQuantityByHeight
   );
 
-  let drawer = new NewDrawer();
+  let drawer = new Drawer();
   const MaterialContainer = drawer.initMainContainer();
   const NestingContainer = drawer.initNestingContainer();
   const MainNestContainer = drawer.initMainNestContainer();
