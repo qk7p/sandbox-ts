@@ -32,6 +32,7 @@ export class Drawer {
       box-sizing: border-box;
       background-color: #5e5e5e;
       border-radius: 5px;
+      border: 1px solid black;
       overflow: visible;
       display: flex;
       justify-content: space-around;
