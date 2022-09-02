@@ -271,8 +271,8 @@ export class NewDrawer {
     let height = 0;
 
     if (this._nestedBy === "byHeight") {
-      const heightSum = this._detail.width + this._detail.marginWidth * 2;
-      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+      const heightSum = this._detail.height + this._detail.marginHeight * 2;
+      const widthSum = this._detail.width + this._detail.marginWidth * 2;
       height = (this._detail.height * 100) / heightSum;
       width = (this._detail.width * 100) / widthSum;
     } else {
@@ -286,7 +286,6 @@ export class NewDrawer {
       box-sizing: border-box;
       background-color: white;
       border: 0.1px solid black;
-      border-radius: 5px;
       width: ${width}%;
       height: ${height}%;
     `;
