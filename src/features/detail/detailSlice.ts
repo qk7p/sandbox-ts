@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store/store";
 
-interface DetailState {
+export interface DetailState {
   width: number;
   height: number;
   marginWidth: number;

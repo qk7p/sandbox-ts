@@ -14,6 +14,14 @@ export class Drawer {
   MainNestWrapper: StyledComponent<"div", any, {}, never>;
   SubNestWrapper: StyledComponent<"div", any, {}, never>;
   NestingWrapper: StyledComponent<"div", any, {}, never>;
+  MainDetail: StyledComponent<"div", any, {}, never>;
+  SubDetail: StyledComponent<"div", any, {}, never>;
+  mainDetailWidth: number;
+  mainDetailHeight: number;
+  subDetailWidth: number;
+  subDetailHeight: number;
+  mainFlexDirection: string;
+  subFlexDirection: string;
 
   constructor() {
     const state = store.getState();
@@ -31,25 +39,52 @@ export class Drawer {
       materialHeight - state.flatMaterial.paddingHeight;
     if (this.flexDirection === "row") {
       this.nestWidth = (cleanMaterialWidth * 100) / materialWidth;
-      this.nestHeight = 100;
+      this.nestHeight = (cleanMaterialHeight * 100) / materialHeight;
+
       this.mainNestWidth =
         (state.nestingDetails.mainMaterialWidth * 100) / cleanMaterialWidth;
       this.mainNestHeight = 100;
+
       this.subNestWidth =
         (state.nestingDetails.subMaterialWidth * 100) / cleanMaterialWidth;
       this.subNestHeight = 100;
+
+      this.mainDetailWidth =
+        (state.detail.width * 100) / state.nestingDetails.mainMaterialWidth;
+      this.mainDetailHeight =
+        (state.detail.height * 100) / state.nestingDetails.mainMaterialHeight;
+
+      this.subDetailWidth =
+        (state.detail.height * 100) / state.nestingDetails.subMaterialWidth;
+      this.subDetailHeight =
+        (state.detail.width * 100) / state.nestingDetails.subMaterialHeight;
+      this.mainFlexDirection = "row";
+      this.subFlexDirection = "column";
     } else {
-      this.nestWidth = 100;
+      this.nestWidth = (cleanMaterialWidth * 100) / materialWidth;
       this.nestHeight = (cleanMaterialHeight * 100) / materialHeight;
+
       this.mainNestWidth = 100;
       this.mainNestHeight =
-        (state.nestingDetails.mainMaterialHeight * 100) / cleanMaterialHeight;
+        (state.nestingDetails.subMaterialHeight * 100) / cleanMaterialHeight;
+
       this.subNestWidth = 100;
       this.subNestHeight =
-        (state.nestingDetails.subMaterialHeight * 100) / cleanMaterialHeight;
+        (state.nestingDetails.mainMaterialHeight * 100) / cleanMaterialHeight;
+
+      this.mainDetailWidth =
+        (state.detail.height * 100) / state.nestingDetails.mainMaterialWidth;
+      this.mainDetailHeight =
+        (state.detail.width * 100) / state.nestingDetails.subMaterialHeight;
+
+      this.subDetailWidth =
+        (state.detail.width * 100) / state.nestingDetails.subMaterialWidth;
+      this.subDetailHeight =
+        (state.detail.height * 100) / state.nestingDetails.subMaterialHeight;
+      this.mainFlexDirection = "column";
+      this.subFlexDirection = "row";
     }
 
-    
     this.MaterialWrapper = styled.div`
       display: flex;
       width: 80%;
@@ -69,6 +104,8 @@ export class Drawer {
     this.MainNestWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      flex-direction: ${this.mainFlexDirection};
       border: 1px solid blue;
       width: ${this.mainNestWidth}%;
       height: ${this.mainNestHeight}%;
@@ -77,9 +114,26 @@ export class Drawer {
     this.SubNestWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      flex-direction: ${this.subFlexDirection};
       border: 1px solid yellow;
       width: ${this.subNestWidth}%;
       height: ${this.subNestHeight}%;
+    `;
+
+    this.MainDetail = styled.div`
+      border: 1px solid white;
+      background-color: purple;
+      width: ${this.mainDetailWidth}%;
+      height: ${this.mainDetailHeight}%;
+      box-sizing: border-box;
+    `;
+    this.SubDetail = styled.div`
+      border: 1px solid white;
+      background-color: green;
+      width: ${this.subDetailWidth}%;
+      height: ${this.subDetailHeight}%;
+      box-sizing: border-box;
     `;
   }
 }

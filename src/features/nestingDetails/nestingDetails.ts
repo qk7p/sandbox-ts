@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store/store";
 
-interface NestingDetailsState {
+export interface NestingDetailsState {
   nestingEfficiency: number;
   mainQuantityByWidth: number;
   mainQuantityByHeight: number;

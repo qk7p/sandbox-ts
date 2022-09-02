@@ -30,7 +30,7 @@ export class FlatNester {
   }
 
   nest() {
-    if (this.nestByWidth() > this.nestByHeight()) {
+    if (this.nestByWidth() >= this.nestByHeight()) {
       this.mainQuantityByWidth = Math.floor(
         this.flatMaterial.getCleanWidth() / this.detail.getCleanWidth()
       );
@@ -43,7 +43,10 @@ export class FlatNester {
       this.subMaterialWidth =
         this.flatMaterial.getCleanWidth() - this.mainMaterialWidth;
       this.subMaterialHeight = this.mainMaterialHeight;
-      if (this.detail.getCleanHeight() < this.mainMaterialWidth) {
+      if (
+        this.detail.getCleanHeight() <= this.subMaterialWidth &&
+        this.detail.getCleanWidth() <= this.mainMaterialHeight
+      ) {
         this.subQuantityByWidth = Math.floor(
           this.subMaterialWidth / this.detail.getCleanHeight()
         );
@@ -63,11 +66,15 @@ export class FlatNester {
       );
       this.mainMaterialWidth = this.flatMaterial.getCleanWidth();
       this.mainMaterialHeight =
-        this.mainQuantityByHeight * this.detail.getCleanHeight();
+        this.mainQuantityByHeight * this.detail.getCleanWidth();
       this.subMaterialWidth = this.mainMaterialWidth;
       this.subMaterialHeight =
         this.flatMaterial.getCleanHeight() - this.mainMaterialHeight;
-      if (this.detail.getCleanHeight() < this.subMaterialHeight) {
+      if (
+        this.detail.getCleanHeight() <= this.subMaterialHeight &&
+        this.detail.getCleanWidth() <= this.subMaterialWidth
+      ) {
+        
         this.subQuantityByWidth = Math.floor(
           this.subMaterialWidth / this.detail.getCleanWidth()
         );

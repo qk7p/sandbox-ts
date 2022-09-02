@@ -9,10 +9,12 @@ import { Button } from "../components/Button";
 import { calcEfficiency } from "../utils/calcEfficiency";
 import { validateInputs } from "../utils/validateInputs";
 import { NestingResultDrawer } from "../components/NestingResultDrawer";
+import { clearResults } from "../utils/clearResults";
 
 export function NestingPage() {
   function calcAllParams() {
     if (validateInputs()) {
+      clearResults();
       nestCurrentDetail();
       calcDetailParams();
       calcMaterialParams();
