@@ -29,13 +29,14 @@ export class NewDrawer {
     } else {
     }
     return styled.div`
-      margin: 25px;
       box-sizing: border-box;
-      background-color: green;
+      background-color: #3aaac7;
+      border-radius: 5px;
+      overflow: visible;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      width: 80%;
+      width: 100%;
       aspect-ratio: ${ratio};
     `;
   }
@@ -53,7 +54,8 @@ export class NewDrawer {
 
     return styled.div`
       box-sizing: border-box;
-      background-color: yellow;
+      background-color: white;
+      overflow: hidden;
       display: flex;
       flex-direction: ${flexDirection};
       width: ${width}%;
@@ -82,7 +84,6 @@ export class NewDrawer {
 
     return styled.div`
       box-sizing: border-box;
-      background-color: red;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -96,6 +97,7 @@ export class NewDrawer {
     let width = 0;
     let height = 0;
     let flexDirection = "";
+    let align = "";
 
     if (this._nestedBy === "byWidth") {
       height = 100;
@@ -103,19 +105,20 @@ export class NewDrawer {
         (this._nestingDetails.subMaterialWidth * 100) /
         this._cleanMaterialWidth;
       flexDirection = "row";
+      align = "normal";
     } else {
       width = 100;
       height =
         (this._nestingDetails.subMaterialHeight * 100) /
         this._cleanMaterialHeight;
       flexDirection = "column";
+      align = "center";
     }
 
     return styled.div`
       box-sizing: border-box;
-      background-color: yellow;
       display: flex;
-      align-items: center;
+      align-items: ${align};
       justify-content: flex-start;
       flex-direction: ${flexDirection};
       width: ${width}%;
@@ -123,7 +126,7 @@ export class NewDrawer {
     `;
   }
 
-  initMainDetail(): StyledComponent<"div", any, {}, never> {
+  initMainDetailContainer(): StyledComponent<"div", any, {}, never> {
     let width = 0;
     let height = 0;
 
@@ -145,15 +148,18 @@ export class NewDrawer {
       height = 100;
     }
     return styled.div`
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      overflow: hidden;
       box-sizing: border-box;
-      background-color: blue;
-      border: 1px solid white;
+      background-color: #e5e7e7;
       width: ${width}%;
       height: ${height}%;
     `;
   }
 
-  initSubDetail(): StyledComponent<"div", any, {}, never> {
+  initSubDetailContainer(): StyledComponent<"div", any, {}, never> {
     let width = 0;
     let height = 0;
 
@@ -171,9 +177,12 @@ export class NewDrawer {
     }
 
     return styled.div`
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      overflow: hidden;
       box-sizing: border-box;
-      background-color: orange;
-      border: 1px solid white;
+      background-color: #e5e7e7;
       width: ${width}%;
       height: ${height}%;
     `;
@@ -202,8 +211,6 @@ export class NewDrawer {
       flex-direction: row;
       width: ${width}%;
       height: ${height}%;
-      border: 1px solid white;
-      background-color: purple;
     `;
   }
 
@@ -231,8 +238,57 @@ export class NewDrawer {
       flex-direction: row;
       width: ${width}%;
       height: ${height}%;
-      border: 1px solid white;
-      background-color: purple;
+    `;
+  }
+
+  initMainDetail(): StyledComponent<"div", any, {}, never> {
+    let width = 0;
+    let height = 0;
+
+    if (this._nestedBy === "byHeight") {
+      const heightSum = this._detail.width + this._detail.marginWidth * 2;
+      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+
+      width = (this._detail.height * 100) / widthSum;
+      height = (this._detail.width * 100) / heightSum;
+    } else {
+      const heightSum = this._detail.height + this._detail.marginHeight * 2;
+      const widthSum = this._detail.width + this._detail.marginWidth * 2;
+      width = (this._detail.height * 100) / heightSum;
+      height = (this._detail.width * 100) / widthSum;
+    }
+    return styled.div`
+      box-sizing: border-box;
+      background-color: white;
+      border: 0.1px solid black;
+      width: ${width}%;
+      height: ${height}%;
+    `;
+  }
+
+  initSubDetail(): StyledComponent<"div", any, {}, never> {
+    let width = 0;
+    let height = 0;
+
+    if (this._nestedBy === "byHeight") {
+      const heightSum = this._detail.width + this._detail.marginWidth * 2;
+      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+      height = (this._detail.height * 100) / heightSum;
+      width = (this._detail.width * 100) / widthSum;
+    } else {
+      const heightSum = this._detail.height + this._detail.marginHeight * 2;
+      const widthSum = this._detail.width + this._detail.marginWidth * 2;
+      height = (this._detail.height * 100) / heightSum;
+      width = (this._detail.width * 100) / widthSum;
+    }
+
+    return styled.div`
+      box-sizing: border-box;
+      background-color: white;
+      border: 0.1px solid black;
+      border-radius: 5px;
+      width: ${width}%;
+      height: ${height}%;
     `;
   }
 }
