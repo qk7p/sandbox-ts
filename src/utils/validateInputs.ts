@@ -31,6 +31,22 @@ export function validateInputs(): boolean {
     } else return true;
   }
 
+  function validateDetailToMaterial() {
+    if (detailWidth > materialWidth && detailWidth > materialHeight) {
+      makeToast(
+        "Ширина детали не может быть больше заготовки",
+        ToastType.Danger
+      );
+      return false;
+    } else if (detailHeight > detailWidth && detailHeight > materialHeight) {
+      makeToast(
+        "Высота детали не может быть больше заготовки",
+        ToastType.Danger
+      );
+      return false;
+    } else return true;
+  }
+
   function validateEmptyParams() {
     if (
       detailWidth === 0 ||
@@ -77,7 +93,8 @@ export function validateInputs(): boolean {
     detailMarginWidthCheck &&
     detailMarginHeightCheck &&
     materialPaddingWidthCheck &&
-    materialPaddingHeightCheck
+    materialPaddingHeightCheck &&
+    validateDetailToMaterial()
   ) {
     return true;
   } else {

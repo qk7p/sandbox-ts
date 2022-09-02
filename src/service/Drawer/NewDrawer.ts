@@ -30,7 +30,7 @@ export class NewDrawer {
     }
     return styled.div`
       box-sizing: border-box;
-      background-color: #3aaac7;
+      background-color: #5e5e5e;
       border-radius: 5px;
       overflow: visible;
       display: flex;
