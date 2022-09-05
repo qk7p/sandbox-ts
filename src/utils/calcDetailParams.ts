@@ -21,7 +21,7 @@ export function calcDetailParams() {
   const cleanWidth = detail.getCleanWidth();
   const cleanHeight = detail.getCleanHeight();
 
-  const area = Number(((cleanWidth / 1000) * (cleanHeight / 1000)).toFixed(3));
+  const area = Number(((cleanWidth / 1000) * (cleanHeight / 1000)).toFixed(4));
   const perimeter = Number(
     ((detailWidth / 1000 + detailHeight / 1000) * 2).toFixed(2)
   );
