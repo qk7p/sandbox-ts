@@ -105,7 +105,14 @@ export class Drawer {
       width =
         (this._nestingDetails.subMaterialWidth * 100) /
         this._cleanMaterialWidth;
-      flexDirection = "row";
+      if (
+        this._nestingDetails.subQuantityByWidth >
+        this._nestingDetails.subQuantityByHeight
+      ) {
+        flexDirection = "row";
+      } else {
+        flexDirection = "column";
+      }
       align = "normal";
     } else {
       width = 100;
@@ -222,7 +229,7 @@ export class Drawer {
       const heightSum = this._detail.width + this._detail.marginWidth * 2;
       const widthSum =
         (this._detail.height + this._detail.marginHeight * 2) *
-        this._nestingDetails.subQuantityByHeight;
+        this._nestingDetails.subQuantityByWidth;
       height = (heightSum * 100) / this._nestingDetails.subMaterialHeight;
       width = (widthSum * 100) / this._nestingDetails.subMaterialWidth;
     } else {
