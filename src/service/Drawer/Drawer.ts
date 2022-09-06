@@ -226,10 +226,11 @@ export class Drawer {
     let height = 0;
     let width = 0;
     if (this._nestedBy === "byWidth") {
-      const heightSum = this._detail.width + this._detail.marginWidth * 2;
-      const widthSum =
-        (this._detail.height + this._detail.marginHeight * 2) *
-        this._nestingDetails.subQuantityByWidth;
+      const heightSum =
+        (this._detail.width + this._detail.marginWidth * 2) *
+        this._nestingDetails.subQuantityByHeight;
+      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+
       height = (heightSum * 100) / this._nestingDetails.subMaterialHeight;
       width = (widthSum * 100) / this._nestingDetails.subMaterialWidth;
     } else {
@@ -284,11 +285,11 @@ export class Drawer {
       height = (this._detail.height * 100) / heightSum;
       width = (this._detail.width * 100) / widthSum;
     } else {
-      const heightSum = this._detail.height + this._detail.marginHeight * 2;
-      const widthSum = this._detail.width + this._detail.marginWidth * 2;
-      height = (this._detail.height * 100) / heightSum;
-      width = (this._detail.width * 100) / widthSum;
-    }
+      const heightSum = this._detail.width + this._detail.marginWidth * 2;
+      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+      height = (this._detail.width * 100) / heightSum;
+      width = (this._detail.height * 100) / widthSum;
+console.log("subdetailrennder")    }
 
     return styled.div`
       box-sizing: border-box;
