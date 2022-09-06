@@ -229,7 +229,9 @@ export class Drawer {
       const heightSum =
         (this._detail.width + this._detail.marginWidth * 2) *
         this._nestingDetails.subQuantityByHeight;
-      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+      const widthSum =
+        (this._detail.height + this._detail.marginHeight * 2) *
+        this._nestingDetails.subQuantityByWidth;
 
       height = (heightSum * 100) / this._nestingDetails.subMaterialHeight;
       width = (widthSum * 100) / this._nestingDetails.subMaterialWidth;
@@ -289,7 +291,8 @@ export class Drawer {
       const widthSum = this._detail.height + this._detail.marginHeight * 2;
       height = (this._detail.width * 100) / heightSum;
       width = (this._detail.height * 100) / widthSum;
-console.log("subdetailrennder")    }
+      console.log("subdetailrennder");
+    }
 
     return styled.div`
       box-sizing: border-box;
