@@ -254,16 +254,16 @@ export class Drawer {
     let height = 0;
 
     if (this._nestedBy === "byHeight") {
-      const heightSum = this._detail.width + this._detail.marginWidth * 2;
-      const widthSum = this._detail.height + this._detail.marginHeight * 2;
+      const heightSum = this._detail.height + this._detail.marginHeight * 2;
+      const widthSum = this._detail.width + this._detail.marginWidth * 2;
 
-      width = (this._detail.height * 100) / widthSum;
-      height = (this._detail.width * 100) / heightSum;
+      width = (this._detail.width * 100) / widthSum;
+      height = (this._detail.height * 100) / heightSum;
     } else {
       const heightSum = this._detail.height + this._detail.marginHeight * 2;
       const widthSum = this._detail.width + this._detail.marginWidth * 2;
-      width = (this._detail.height * 100) / heightSum;
-      height = (this._detail.width * 100) / widthSum;
+      width = (this._detail.width * 100) / widthSum;
+      height = (this._detail.height * 100) / heightSum;
     }
     return styled.div`
       box-sizing: border-box;
