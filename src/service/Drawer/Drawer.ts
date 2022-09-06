@@ -257,8 +257,8 @@ export class Drawer {
       const heightSum = this._detail.height + this._detail.marginHeight * 2;
       const widthSum = this._detail.width + this._detail.marginWidth * 2;
 
-      width = (this._detail.width * 100) / widthSum;
-      height = (this._detail.height * 100) / heightSum;
+      width = (this._detail.height * 100) / heightSum;
+      height = (this._detail.width * 100) / widthSum;
     } else {
       const heightSum = this._detail.height + this._detail.marginHeight * 2;
       const widthSum = this._detail.width + this._detail.marginWidth * 2;
