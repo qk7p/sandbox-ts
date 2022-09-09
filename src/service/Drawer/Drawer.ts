@@ -227,8 +227,7 @@ export class Drawer {
     let width = 0;
     if (this._nestedBy === "byWidth") {
       const heightSum =
-        (this._detail.width + this._detail.marginWidth * 2) *
-        this._nestingDetails.subQuantityByHeight;
+        (this._detail.width + this._detail.marginWidth * 2)
       const widthSum =
         (this._detail.height + this._detail.marginHeight * 2) *
         this._nestingDetails.subQuantityByWidth;
